@@ -1,0 +1,231 @@
+@charset "utf-8";
+
+body {
+    width: 100%;
+    height: 100%;
+    letter-spacing: 0.05em;
+    color: #fff;
+    background-color: #000;
+    font-family:'Noto Serif JP','BIZ UDPMincho', 'Noto Sans JP',serif;
+}
+img {
+    max-width: 100%;
+    width: 100%;
+}
+/* 共通 */
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+    width: 100%;
+}
+/* フェードイン最初は非表示 */
+.fade-in {
+    opacity: 0;
+    transition-duration: 1s;
+    transition-property: opacity,transform;
+    transform: translate(0, 50px);
+}
+/* 特定の位置までスクロールすると表示 */
+.scroll-in {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+/* メインビジュアル */
+.mainvisual {
+    background-image: url(../images/mainvisual.jpeg);
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: cover;
+    position: relative;
+    height: 100%;
+}
+/* メインタイトル */
+.main-title {
+    font-size: 8rem;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 10px 10px 10px #333;
+    position: absolute;
+    line-height: 1.5;
+    top:20%;
+    left: 34%;
+    letter-spacing: 0.05em;
+}
+.main-title::before, 
+.main-title::after {
+    display: block;
+}
+.main-title::before {
+    content: "淀川河川敷";
+    font-size: 4rem;
+}
+.main-title::after {
+    content: "2023";
+    font-size: 4rem;
+}
+.main-text {
+    display: block;
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 10px 10px 10px #333;
+    position: absolute;
+    top: 70%;
+    left: 30%;
+    letter-spacing: 0.05em;
+}
+/* セクションつなぎの黒枠 */
+.bk {
+    width: 100%;
+    height: 200px;
+    background-color: #000;
+    border-radius: 50%;
+}
+/* main */
+.content {
+    background-image: url(../images/bg.jpeg);
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: cover;
+    height: 100%;
+    z-index: -1;
+}
+.sub-title {
+    color: #f1f401;
+    font-size: 3rem;
+    line-height: 2;
+    padding-top: 140px;
+    padding-bottom: 300px;
+    padding-left: 200px;
+}
+.text {
+    font-size: 1.2rem;
+    line-height: 2;
+    width: 57%;
+    margin-bottom: 120px;
+}
+.text span {
+    font-weight: bold;
+    font-size: 1.875rem;
+}
+.detail {
+    font-size: 2rem;
+}
+.detail-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+.detail-list dt {
+    width: 20%;
+    padding: 20px 0;
+}
+.detail-list dd {
+    width: 80%;
+    padding: 20px 0;
+}
+.supplement-text {
+    padding: 120px 0;
+    font-size: 1.5rem;
+    line-height: 2;
+}
+.url {
+    color: #f1f401;
+    font-weight: 700;
+}
+@media screen and (max-width: 900px){
+    .main-title {
+        font-size: 7rem;
+        top: 10%;
+        left: 20%;
+    }
+    .main-title::before,
+    .main-title::after {
+        font-size: 3rem;
+    }
+    .main-text {
+        top: 50%;
+        left: 20%;
+        font-size: 3rem;
+    }
+    .bk {
+        height: calc(200 / 900 * 100vw);
+    }
+    /* main */
+    .content {
+        background-position: 40% top;
+    }
+    .sub-title {
+        padding: 70px 16px;
+    }
+    .supplement-text {
+        padding: 80px 0;
+    }
+}
+@media screen and (max-width: 767px) {
+    .wrapper {
+        padding: 0 16px;
+    }
+    /* メインビジュアル */
+    .mainvisual {
+        padding: 0 16px;
+        position: relative;
+    }
+    .main-title {
+        font-size: 3rem;
+        padding: 0 16px;
+        right: auto;
+        top: 30px;
+    }
+    .main-title::before,
+    .main-title::after {
+        font-size: 2rem;
+    }
+    .main-text {
+        padding: 0 16px;
+        font-size: 1.5rem;
+        top: 200px;
+        left: 10%;
+    }
+    .bk {
+        height: 100px;
+    }
+    /* main */
+    .content {
+        background-position: 40% top;
+    }
+    .sub-title {
+        font-size: 2rem;
+        padding: 70px 16px;
+        text-shadow: 10px 10px 10px #000;
+    }
+    .text {
+        width: 100%;
+        font-size: 1rem;
+        margin-bottom: 60px;
+        text-shadow: 10px 10px 10px #000;
+    }
+    .text span {
+        font-size: 1.5rem;
+        line-height: 1.2;
+    }
+    /* 詳細 */
+    .detail {
+        font-size: 1.5rem;
+    }
+    .detail-list {
+        flex-direction: column;
+    }
+    .detail-list dt {
+        width: 100%;
+        padding: 10px 0;
+    }
+    .detail-list dd {
+        width: 100%;
+        padding: 10px 0;
+    }
+    .supplement-text {
+        font-size: 1rem;
+        padding: 60px 0;
+    }
+}
